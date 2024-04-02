@@ -18,7 +18,8 @@ public class ClassLoaderExample {
 		// String is an object.
 		// String is predefined class in java which is available in rt.jar which can be
 		// loaded by bootstrap class loader
-		Class<String> cl = (Class<String>) str.getClass();
+		Class<String> class1 = (Class<String>) str.getClass();
+		Class<String> cl = class1;
 		ClassLoader classLoader = cl.getClassLoader();
 		// Since BootstrapClassLoader is not in java, we get null
 		System.out.println(classLoader);

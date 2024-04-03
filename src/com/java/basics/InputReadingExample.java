@@ -11,14 +11,17 @@ public class InputReadingExample {
 		
 		/**
 		 * BufferedReader reads input in only string format using readLine method
-		 * Inorder to get specific type we have to user parse methods of Wrapper
+		 * Inorder to get specific type we have to use parse methods of Wrapper
 		 * classes.
 		 * Size of BufferedReader is 8KB
 		 */
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		try {
+			System.out.println("Enter number");
 			int a = Integer.parseInt(reader.readLine());
+			System.out.println("Enter String");
 			String word = reader.readLine();
+			System.out.println("Enter double value");
 			double b = Double.parseDouble(reader.readLine());
 			
 			System.out.println(a);
@@ -31,19 +34,23 @@ public class InputReadingExample {
 		// using scanner to read input from user
 		/*
 		 * Scanner does parsing as well. Scanner provides various methods to read
-		 * different types of input like int, byte, shor, float, double, string etc. Due
-		 * to parsing Scanner is bit slow than BufferedReader
+		 * different types of input like int, byte, short, float, double, string etc. Due
+		 * to parsing Scanner is bit slower than BufferedReader
 		 * 
 		 * Size of Scanner is 1KB. If input is larger, then its better to use
 		 * BufferedReader since BufferedReader capacity is high.
 		 */
 		System.out.println("================Using scanner==========");
 		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter number: ");
 		int num = sc.nextInt();
 		sc.nextLine();
+		System.out.print("Enter string: ");
 		String str = sc.nextLine();
+		System.out.print("Enter double value: ");
 		double d = sc.nextDouble();
 		sc.nextLine();
+		System.out.print("Enter string: ");
 		String s1 = sc.nextLine();
 		
 		System.out.println(num);

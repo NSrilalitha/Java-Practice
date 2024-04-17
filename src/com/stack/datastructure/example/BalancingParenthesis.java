@@ -88,3 +88,18 @@ public class BalancingParenthesis {
 }
 
 // Another approach to solve this problem using stack refer https://www.javatpoint.com/balanced-parentheses-in-java
+
+// solution approach
+// Algorithm:
+/**
+ * 1. Declare a character stack S. 
+ * 2. Now traverse the expression string exp.
+ * 		2.1. If the current character is a starting bracket ‘(‘ then push it to
+ * 			 stack. 
+ * 		2.2. If the current character is a closing bracket ‘)’ then pop from
+ * 			 stack and if the popped character is the matching starting bracket then fine
+ * 			 else parenthesis are not balanced. 
+ * 3. After complete traversal, if there is some starting bracket left in stack then “-1”
+ * 
+ * Time Complexity: O(len(A)) Auxiliary Space: O(len(A)) for stack.
+ */

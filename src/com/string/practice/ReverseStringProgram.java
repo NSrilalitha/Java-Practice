@@ -63,12 +63,12 @@ public class ReverseStringProgram {
 		System.out.println("----------Demo on replace method----------");
 		
 		String s1 = "abchellodefhellojkihello";
-		// replace method replaces all occurances of string with given string
+		// replace method replaces all occurrences of string with given string
 		s1 = s1.replace("hello", "hi");
 		System.out.println(s1);
 		
 		System.out.println("---------------Demo on replaceFirst method----------");
-		// replaceFirst replaces only first occurance of string with given string
+		// replaceFirst replaces only first occurrence of string with given string
 		String s2 = "abchellodefhellojkihello".replaceFirst("hello", "hi");
 		System.out.println(s2);
 		

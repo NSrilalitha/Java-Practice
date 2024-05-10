@@ -20,6 +20,30 @@ public class StringComparison {
 		System.out.println(s1==s2);
 		System.out.println(s1==s3);
 		System.out.println(s3==s4);
+		
+		// empty string
+		String str = new String();
+		System.out.println("str value:"+str);	
+		if(str.equals("")) {
+			System.out.println("its empty");
+		} else if (str.equals(null)) {
+			System.out.println("its null");
+		} else {
+		}
+		
+		// StringBuffer replace method
+		StringBuffer sb = new StringBuffer("Hi! My name is Lalitha");
+		System.out.println(sb.charAt(15));
+		sb.replace(15, 22, "Srilalitha");
+		System.out.println(sb.toString());
+		
+		//String replace method
+		String str1 = new String("Hi again telling Hi my name is so and so");
+		str1 = str1.replace("Hi", "Hello");
+		System.out.println(str1);
+		//now replacing only first occurrence
+		str1 = str1.replaceFirst("so", "doll");
+		System.out.println(str1);
 	}
 
 }

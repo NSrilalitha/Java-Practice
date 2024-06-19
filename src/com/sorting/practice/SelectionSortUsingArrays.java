@@ -8,13 +8,16 @@ public class SelectionSortUsingArrays {
      */
     public void sortArrayElements(char[] letters) {
         for(int i = 0; i < letters.length - 1; i++) {
+            int min_index = i;
             for(int j = i + 1; j < letters.length; j++) {
-                if(letters[j] < letters[i]) {
-                    char temp = letters[i];
-                    letters[i] = letters[j];
-                    letters[j] = temp;
+                if(letters[j] < letters[min_index]) {
+                    min_index = j;
                 }
             }
+            // Swap the found minimum element with the first element
+            char temp = letters[i];
+            letters[i] = letters[min_index];
+            letters[min_index] = temp;
         }
         // now print sorted array
         for(char letter : letters) {

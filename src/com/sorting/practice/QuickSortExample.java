@@ -3,6 +3,8 @@ package com.sorting.practice;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.sorting.practice.SortingUtilityHelper.numbersList;
+
 /*
  * Time complexity for average case is O(nlogn) and for worst case is O(n2)\
  * It is an in-place sorting algorithm i.e., it doesn't need any extra space to sort
@@ -21,16 +23,10 @@ import java.util.List;
 public class QuickSortExample {
 
 	public static void main(String[] args) {
-		
-		List<Integer> list = new ArrayList<>();
-		list.add(10);
-		list.add(32);
-		list.add(8);
-		list.add(57);
-		list.add(12);
-		list.add(89);
-		
-		// Now sort the list using QuickSort
+
+        List<Integer> list = SortingUtilityHelper.numbersList();
+
+        // Now sort the list using QuickSort
 		doQuickSort(list, 0, list.size()-1);
 		
 		// print the list

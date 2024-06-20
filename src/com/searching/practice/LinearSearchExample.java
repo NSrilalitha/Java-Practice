@@ -1,21 +1,18 @@
 package com.searching.practice;
 
+import com.sorting.practice.BubbleSortExample;
+import com.sorting.practice.SortingUtilityHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class LinearSearchExample {
 
 	public static void main(String[] args) {
-		
-		List<Integer> list = new ArrayList<>();
-		list.add(10);
-		list.add(32);
-		list.add(8);
-		list.add(57);
-		list.add(12);
-		list.add(89);
-		
-		doLinearSearch(list, 12);
+
+		List<Integer> list = SortingUtilityHelper.numbersList();
+
+        doLinearSearch(list, 12);
 	}
 
 	private static void doLinearSearch(List<Integer> list, int key) {

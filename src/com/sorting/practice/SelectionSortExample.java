@@ -9,15 +9,9 @@ import java.util.List;
 public class SelectionSortExample {
 
 	public static void main(String[] args) {
-		
-		List<Integer> list = new ArrayList<>();
-		list.add(10);
-		list.add(32);
-		list.add(8);
-		list.add(57);
-		list.add(12);
-		list.add(89);
-		
+
+		List<Integer> list = SortingUtilityHelper.numbersList();
+
 		// Now sort the integers using selection sort
 		// for selection sort we need to find smallest element index and replace the elements
 		for(int i=0;i<list.size()-1;i++) {
@@ -28,9 +22,7 @@ public class SelectionSortExample {
 				}
 			}
 			// swap
-			int temp = list.get(i);
-			list.set(i, list.get(min_index));
-			list.set(min_index, temp);
+			SortingUtilityHelper.swapIndexes(i, min_index, list);
 		}
 		
 		// now print sorted list

@@ -11,15 +11,9 @@ public class InsertionSortExample {
 	public static void main(String[] args) {
 		
 		// Insertion sort best suitable for small lists
-		List<Integer> list = new ArrayList<>();
-		list.add(10);
-		list.add(32);
-		list.add(8);
-		list.add(57);
-		list.add(12);
-		list.add(89);
-		
-		// insertion sort swaps adjacent elements 
+		List<Integer> list = SortingUtilityHelper.numbersList();
+
+        // insertion sort swaps adjacent elements
 		for (int i=1; i<list.size();i++) {
 			for (int j=i;j>0;j--) {
 				if (list.get(j) < list.get(j-1)) {

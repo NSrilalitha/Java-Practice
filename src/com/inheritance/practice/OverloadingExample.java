@@ -17,6 +17,11 @@ public class OverloadingExample {
 		
 		Sample1 s1 = new Sample2();
 		s1.methodOne("sri");
+		// reference type determines which overloaded version is selected. happens at compile time
+		// since s1 is Sample1 reference variable it wont be able to detect non-overloaded method present in Sample2
+		// s1.display(); // here with s1 we wont be able to find display() method.
+
+
 	}	
 
 }
@@ -38,5 +43,8 @@ class Sample2 extends Sample1 {
 	public void methodOne(int num) {
 		System.out.println("Given number is "+num);
 	}
-	
+
+	public void display() {
+		System.out.println("I am in display method");
+	}
 }

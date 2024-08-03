@@ -1,5 +1,10 @@
 package com.sorting.practice;
 
+/**
+ * Selection sort is not stable.
+ *
+ * To learn algorithm refer: https://www.geeksforgeeks.org/selection-sort/?ref=shm
+ */
 public class SelectionSortUsingArrays {
 
     /*

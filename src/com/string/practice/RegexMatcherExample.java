@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class RegexMatcherExample {
 
 	public static void main(String[] args) {
-		
+		/*
 		String str = "110111";
 		
 		// Now find consecutive 1's count in given string
@@ -32,6 +32,16 @@ public class RegexMatcherExample {
 			count = 1;
 		}
 		System.out.println(count);
+		*/
 		
+		String str1 = "ABCDEF";
+		String str2 = "ABC";
+		String res = "ABC";
+		String pattern = "[" + res + "]+";
+		if(str1.matches(pattern) && str2.matches(pattern)) {
+			System.out.println("it contains only res ");
+		} else {
+			System.out.println("it contains other characters as well");
+		}
 	}
 }

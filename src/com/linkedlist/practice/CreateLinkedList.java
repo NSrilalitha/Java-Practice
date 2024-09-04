@@ -20,7 +20,7 @@ public class CreateLinkedList {
 	}
 	
 	/*
-	 * Create a Node class which represents node in linkedlist.
+	 * Create a Node class which represents node in linkedlist. This is inner static class, so that accessible by main method.
 	 */
 	static class Node {
 		int data;

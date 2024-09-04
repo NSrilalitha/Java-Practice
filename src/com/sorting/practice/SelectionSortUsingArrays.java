@@ -4,6 +4,8 @@ package com.sorting.practice;
  * Selection sort is not stable.
  *
  * To learn algorithm refer: https://www.geeksforgeeks.org/selection-sort/?ref=shm
+ * 
+ * https://leetcode.com/explore/learn/card/sorting/694/comparison-based-sorts/4433/
  */
 public class SelectionSortUsingArrays {
 

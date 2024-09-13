@@ -38,12 +38,12 @@ public class CreateLinkedList {
 	/*
 	 * Method to traverse the linked list and print elements
 	 */
-	private static void printLinkedList(Node head) {
+	private static void printLinkedList(Node current) {
 		
-		// traverse from head to tail
-		while (head != null) {
-			System.out.print(head.data + " ");
-			head = head.next;
+		// traverse from current to tail
+		while (current != null) {
+			System.out.print(current.data + " ");
+			current = current.next;
 		}
 		
 	}

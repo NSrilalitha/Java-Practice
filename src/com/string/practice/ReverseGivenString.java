@@ -34,7 +34,7 @@ public class ReverseGivenString {
         char[] arr = str.toCharArray();
 
         int first = 0,last = len-1;
-        while(first != last) {
+        while(first < last) {
             char temp = arr[first];
             arr[first] = arr[last];
             arr[last] = temp;

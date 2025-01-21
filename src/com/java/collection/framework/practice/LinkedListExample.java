@@ -30,6 +30,10 @@ public class LinkedListExample {
 		System.out.println("============================");
 		list.forEach((s) -> System.out.println(s));
 		
+		// retrieval i.e., try to retrieve from LinkedList through index
+		String str = names.get(2);
+		System.out.println("The word present at index 2 is "+str);
+		
 		System.out.println("printing elements using descending iterator");
 		// print elements in reverse direction using descendingIterator
 		Iterator<String> itr = list.descendingIterator();

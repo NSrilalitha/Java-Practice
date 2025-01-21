@@ -1,5 +1,8 @@
 package com.linkedlist.practice;
 
+/**
+ * Creating linked list from scratch - refer https://leetcode.com/explore/learn/card/linked-list/209/singly-linked-list/1290/
+ */
 public class CreateLinkedListFromScratch {
 
 	static Node head;
@@ -49,7 +52,7 @@ public class CreateLinkedListFromScratch {
 			while (current.next != null) {
 				current = current.next;
 			}
-			// now assign newNode to head
+			// now assign newNode 
 			current.next = newNode;
 		}
 	}

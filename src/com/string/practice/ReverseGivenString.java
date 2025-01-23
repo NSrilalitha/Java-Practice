@@ -27,10 +27,12 @@ public class ReverseGivenString {
         System.out.println(new StringBuilder(str).reverse().toString());
 
         // Method-3: Using Recursion
+        // time complexity : O(n) and Space complexity : O(n)
         ReverseGivenString ob = new ReverseGivenString();
         System.out.println("reversed string using recursion " +ob.reverse(str));
 
         // Method-4: Using a char array and reverse the array in place.
+        // for this approach time complexity : O(n) and Space complexity : O(n)
         char[] arr = str.toCharArray();
 
         int first = 0,last = len-1;
@@ -70,6 +72,7 @@ public class ReverseGivenString {
                         }
                 ));
         System.out.println("reversed string using java 8 streams "+ reversedStr);
+
     }
 
     /*

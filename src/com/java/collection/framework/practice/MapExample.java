@@ -56,11 +56,14 @@ public class MapExample {
 		// syncMap is synchronized now
 		syncMap.put("90", "suda");
 		syncMap.put("23", "after");
-		
+
+		/*
 		Set<Entry<String, String>> syncSet = syncMap.entrySet();
 		for(Entry<String, String> entry: syncSet) {
 			System.out.println(entry.getKey() + " " + entry.getValue());
-		}
+		} */
+		// printing map key values using java 8 forEach
+		syncMap.forEach((key,value) -> System.out.println(key + " " + value));
 		
 		System.out.println("===================================");
 		System.out.println("HashMap is mutable. To get immutable i.e., unchanged Map use unmodifiedMap method of Collections");

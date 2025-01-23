@@ -14,7 +14,7 @@ import java.util.Set;
 public class MapJava8Features {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		// in java8 new methods (default methods) introduced in Map interface. eg: compute(), computeIfPresent(), computeIfAbsent()
 		
 		String str = "lalitha";
@@ -23,12 +23,17 @@ public class MapJava8Features {
 		
 		for (int i=0;i<str.length();i++) {
 			Character ch = str.charAt(i);
-			// if corresponding key is not present or key is mapped to null then computeIfAbsent methods computes a value and
-			// assign it to corresponding key
-			map.computeIfAbsent(ch, (character) -> 1);
-			// if key is already present and not null, then update its value by computing using a function which is represented in
-			// lambda expression
-			map.computeIfPresent(ch, (character, count) -> count+1);	
+			if (null == map.get(ch)) {
+				// if corresponding key is not present or key is mapped to null then computeIfAbsent methods computes a value and
+				// assign it to corresponding key
+				map.computeIfAbsent(ch, (character) -> 1);
+				// above can be altered as shown below
+				//map.putIfAbsent(ch, 1);
+			} else {
+				// if key is already present and not null, then update its value by computing using a function which is represented in
+				// lambda expression
+				map.computeIfPresent(ch, (character, count) -> count+1);
+			}
 		}
 		
 		// now print map using foreach method which is introduced in java8
@@ -73,6 +78,12 @@ public class MapJava8Features {
 		personMap.entrySet().stream()
 							.sorted((entry1, entry2) -> entry1.getValue().compareTo(entry2.getValue()))
 							.forEachOrdered((entry) -> System.out.println(entry.getKey() + " - " + entry.getValue()));
+
+		// above can be altered as shown below using comparingByValue method
+		System.out.println("====printing the sorted map====");
+		personMap.entrySet().stream()
+				.sorted(Map.Entry.comparingByValue())
+				.forEachOrdered((entry) -> System.out.println(entry.getKey() + " = " + entry.getValue()));
 	}
 
 }

@@ -1,14 +1,16 @@
-# Ignore class files
+# Ignore Compiled class files
 *.class
 
-# Ignore build directory
-/build/
-/out/
-/target/
+# Ignore Java build folders
+bin/
+out/
+build/
+target/
 
 # Ignore IDE specific files
 *.iml
 .idea/
+
+# Logs and temp
 *.log
 *.swp
-.DS_Store

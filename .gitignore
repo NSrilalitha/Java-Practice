@@ -1,0 +1,14 @@
+# Ignore class files
+*.class
+
+# Ignore build directory
+/build/
+/out/
+/target/
+
+# Ignore IDE specific files
+*.iml
+.idea/
+*.log
+*.swp
+.DS_Store

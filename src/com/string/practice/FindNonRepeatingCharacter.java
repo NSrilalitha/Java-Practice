@@ -22,7 +22,7 @@ public class FindNonRepeatingCharacter {
         System.out.println("============================================================");
         for(int i=0;i<=str.length()-1;i++) {
             char ch = str.charAt(i);
-            if(str.indexOf(ch) == str.lastIndexOf(ch)) {
+            if(str.indexOf(ch) == str.lastIndexOf(ch)) { // note: indexOf method takes O(N) time complexity
                 System.out.println("The first non-repeating character in the given word is "+ch);
                 break;
             }

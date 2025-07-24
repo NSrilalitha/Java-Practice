@@ -37,7 +37,7 @@ public class ConvertToUppercase {
         String firstName = names.stream()
                 .filter(name -> name.trim().startsWith("A"))
                 .findFirst()
-                .orElse("Not Present");
+                .orElse("Not Present"); // orElse does eager evaluation
 
         System.out.println("First name starts with A: "+firstName);
 

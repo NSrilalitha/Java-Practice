@@ -1,6 +1,6 @@
 package com.sorting.practice;
 
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -27,13 +27,13 @@ public class SortStudents {
 
         // sort the collection
         set.stream()
-                .sorted((student1,student2) -> student1.getRoll_no()-student2.getRoll_no())
+                .sorted(Comparator.comparingInt(Student::getRoll_no))
                 .forEach(System.out::println);
 
         System.out.println("==========printing list ===========");
 
         List<Student> list = set.stream()
-                .sorted((student1,student2) -> student1.getName().toLowerCase().compareTo(student2.getName().toLowerCase()))
+                .sorted(Comparator.comparing(student -> student.getName().toLowerCase()))
                 .collect(Collectors.toList());
 
         list.forEach(System.out::println);

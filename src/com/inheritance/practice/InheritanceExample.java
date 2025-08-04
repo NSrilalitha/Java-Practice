@@ -21,8 +21,10 @@ public class InheritanceExample {
 		
 		// creating another child class instance with default constructor
 		Child child1 = new Child();
-	
-		
+
+		// If we assign Parent class object to Child class reference, We get ClassCastException
+		Child ch = (Child) new Parent();
+		System.out.println(ch.name);
 	}
 }
 

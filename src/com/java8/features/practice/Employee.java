@@ -8,10 +8,13 @@ public class Employee {
 
     private int salary;
 
-    public Employee(int id, String name, int salary) {
+    private String department;
+
+    public Employee(int id, String name, int salary, String department) {
         this.id = id;
         this.name = name;
         this.salary = salary;
+        this.department = department;
     }
 
     public int getId() {
@@ -26,8 +29,16 @@ public class Employee {
         return salary;
     }
 
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
-        return "Employee[" + id + " , " + name + " , " + salary + "]";
+        return "Employee[" + id + " , " + name + " , " + salary + " , " + department + "]";
     }
 }

@@ -37,5 +37,12 @@ public class FindDuplicateNumbers {
                 .collect(Collectors.toList());
 
         System.out.println("duplicate elements are : "+duplicateNumbers);
+
+
+        // Find frequency of each word in given list
+        List<String> words = Arrays.asList("cat","bat","rat","cat","rat","cat","mat","bat");
+
+        words.stream().collect(Collectors.groupingBy(word -> word, Collectors.counting()))
+                .forEach((key, value) -> System.out.println(key + " " + value));
     }
 }

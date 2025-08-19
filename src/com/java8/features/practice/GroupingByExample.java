@@ -31,5 +31,7 @@ public class GroupingByExample {
 
         // This is another way of printing the map i.e., it will call the toString() method on map
         System.out.println(map);
+
+        map.forEach((length,words) -> System.out.println(length + " " + words));
     }
 }

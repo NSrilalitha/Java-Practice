@@ -1,7 +1,6 @@
 package com.java8.features.practice;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -15,15 +14,16 @@ public class FindSameSalariedEmployees {
     public static void main(String[] args) {
 
         List<Employee> employees = Arrays.asList(
-                new Employee(1,"Sri",25000),
-                new Employee(2,"Priya",25000),
-                new Employee(3, "Radha",10000),
-                new Employee(4,"Abhi",40000),
-                new Employee(5,"Geetha",40000),
-                new Employee(6,"Venkat",30000),
-                new Employee(7,"Sudha",10000)
+                new Employee(1,"Sri",25000,"HR"),
+                new Employee(2,"Priya",25000,"Finance"),
+                new Employee(3, "Radha",10000,"HR"),
+                new Employee(4,"Abhi",40000,"HR"),
+                new Employee(5,"Geetha",40000,"Finance"),
+                new Employee(6,"Venkat",30000,"Auditing"),
+                new Employee(7,"Sudha",10000,"Auditing")
         );
 
+        // Problem -1: Get list of employees who has same salary
         List<Employee> duplicateSalariedEmployees = employees.stream()
                 .collect(Collectors.groupingBy(Employee :: getSalary)) //Map<Integer,List<Employee>>
                 .values().stream()
@@ -32,5 +32,28 @@ public class FindSameSalariedEmployees {
                 .collect(Collectors.toList());
 
         duplicateSalariedEmployees.forEach(System.out::println);
+
+
+        // problem -2: Group employees by their department
+        Map<String, List<Employee>> groupingByDepartment = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment));
+
+        System.out.println(groupingByDepartment);
+
+        groupingByDepartment.values().stream()
+                .flatMap(List::stream)
+                .sorted(Comparator.comparing(Employee::getDepartment)
+                        .thenComparing(Employee::getSalary)) // Sorting the employees based on department first and then salary
+                .forEach(System.out::println);
+
+
+        // Problem -3: Sort the employees by their Department using built-in function
+        employees.stream()
+                .sorted(Comparator.comparing(Employee::getDepartment))
+                .forEach(System.out::println);
+
+        // sort the employees by their department without using built-in functions, write custom logic
+
+
     }
 }

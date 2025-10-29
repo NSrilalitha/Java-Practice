@@ -12,18 +12,18 @@ public class BubbleSortExample {
 
 		List<Integer> list = SortingUtilityHelper.numbersList();
 
-		int numOfSwaps = 0;
 		// now sort the list using bubble sort
 		int n = list.size();
-		for (int i=0;i<n;i++) {
-			for (int j=0;j<n-1;j++) {
+		for (int i=0;i<n-1;i++) {
+			int numOfSwaps = 0;
+			for (int j=0;j<n-i-1;j++) {
 				if (list.get(j)>list.get(j+1)) {
 					// swap those two numbers
 					SortingUtilityHelper.swapIndexes(j, j+1, list);
 					numOfSwaps++;
 				}
 			}
-			// after 1 traversal if no of swaps are zero means list is already sorted. No need to traverse again
+			// if no of swaps are zero means list is already sorted. No need to traverse again
 			if (numOfSwaps == 0) 
 				break;
 		}

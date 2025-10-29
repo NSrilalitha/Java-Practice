@@ -1,31 +1,36 @@
 package com.sorting.practice;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /*
- * Time complexity for average case is O(n2)
+ * Time complexity for insertion sort :
+ *
+ * best case : O(N)
+ * average/worst case is O(n2)
  */
 public class InsertionSortExample {
 
 	public static void main(String[] args) {
-		
+
+		// sort the list of numbers in ascending order
+
 		// Insertion sort best suitable for small lists
 		List<Integer> list = SortingUtilityHelper.numbersList();
 
-        // insertion sort swaps adjacent elements
-		for (int i=1; i<list.size();i++) {
-			for (int j=i;j>0;j--) {
-				if (list.get(j) < list.get(j-1)) {
-					//swap
-					int temp = list.get(j);
-					list.set(j, list.get(j-1));
-					list.set(j-1, temp);
-				}
-				
+        // i starts from 1, treating first part as already sorted
+		for(int i=0;i<list.size();i++) {
+
+			int key = list.get(i); // element to be inserted into sorted part
+			int j = i-1;
+
+			while (j>=0 && list.get(j) > key) { // for descending order just change > to < i.e., list.get(j) < key
+				// shift current element one position right side, create hole to insert key into its correct position
+				list.set(j+1, list.get(j));
+				j--;
 			}
+			// Insert the key into its correct position
+			list.set(j+1, key);
 		}
-		
 		
 		// now print list
 		System.out.println("=========Sorted list=====");

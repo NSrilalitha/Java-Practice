@@ -21,7 +21,7 @@ public class InsertionSortUsingArrays {
         // creating instance to call sorting method
         InsertionSortUsingArrays sorter = new InsertionSortUsingArrays();
 
-        // sorts the numbers
+        // sorts the numbers in descending order
         sorter.insertionSort(arr);
 
         System.out.println();
@@ -37,14 +37,17 @@ public class InsertionSortUsingArrays {
         System.out.println("Given array: "+Arrays.toString(arr));
         // SORTING LOGIC STARTS HERE
         int n = arr.length;
-        for(int i=0;i<n-1;i++) {
-            for (int j= i+1;j>0;j--) {
-                if (arr[j] < arr[j-1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
-                }
+        // sort the numbers in descending order
+        for(int i=1;i<n;i++) {
+            int key = arr[i]; // element to be inserted in sorted part at correct position
+            int j = i-1;
+
+            while(j>=0 && arr[j] < key) {
+                arr[j+1] = arr[j];
+                j--;
             }
+            // insert key at correct position
+            arr[j+1] = key;
         }
 
         // print sorted array
@@ -61,14 +64,16 @@ public class InsertionSortUsingArrays {
     public void insertionSort(String[] words) {
         System.out.println("Given array of words :"+ Arrays.toString(words));
         int n = words.length;
-        for(int i=0;i<n-1;i++) {
-            for (int j= i+1;j>0;j--) {
-                if (words[j].compareTo(words[j-1]) < 0) {
-                    String temp = words[j];
-                    words[j] = words[j-1];
-                    words[j-1] = temp;
-                }
+        for(int i=1;i<n;i++) {
+            String key = words[i];
+            int j = i-1;
+
+            while(j>=0 && words[j].compareTo(key) > 0) {
+                words[j+1] = words[j]; // shift by 1 position right side
+                j--;
             }
+            // insert key in correct position
+            words[j+1] = key;
         }
 
         // print sorted array

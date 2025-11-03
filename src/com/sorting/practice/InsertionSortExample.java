@@ -18,11 +18,13 @@ public class InsertionSortExample {
 		List<Integer> list = SortingUtilityHelper.numbersList();
 
         // i starts from 1, treating first part as already sorted
-		for(int i=0;i<list.size();i++) {
+		for(int i=1;i<list.size();i++) {
 
 			int key = list.get(i); // element to be inserted into sorted part
 			int j = i-1;
 
+			// Move elements of arr[0..i-1] that are greater than key
+			// to one position ahead of their current position
 			while (j>=0 && list.get(j) > key) { // for descending order just change > to < i.e., list.get(j) < key
 				// shift current element one position right side, create hole to insert key into its correct position
 				list.set(j+1, list.get(j));

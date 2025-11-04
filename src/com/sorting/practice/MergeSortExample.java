@@ -54,6 +54,13 @@ public class MergeSortExample {
             R[j] = arr[mid+1+j];
         }
 
+        // here to make use of java built-in Arrays.copyOfRange function to copy the array elements we can use below code, which will replace above code
+        /*
+            // Create left and right subarrays using built-in method
+            int[] L = Arrays.copyOfRange(arr, left, mid + 1);     // mid + 1 because copyOfRange end is exclusive
+            int[] R = Arrays.copyOfRange(arr, mid + 1, right + 1);
+         */
+
         // now combine the two arrays and rewrite the arr with sorted order
         int i=0,j=0,k=left;
         while(i<n1 && j<n2) {

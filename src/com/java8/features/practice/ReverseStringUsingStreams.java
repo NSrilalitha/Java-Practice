@@ -8,8 +8,9 @@ public class ReverseStringUsingStreams {
     public static void main(String[] args) {
 
         // string to be reversed
-        String str = "hello";
+        String str = "hello world";
 
+        // Approach-1: Using StringBuilder with streams
         String rev = str.chars()  // Convert to IntStream (stream of ASCII values)
                 .mapToObj(c -> (char)c)  // Convert the IntStream to Stream<Character>
                 .collect(Collectors.collectingAndThen(
@@ -22,7 +23,7 @@ public class ReverseStringUsingStreams {
                 ));
         System.out.println("reversed string using java 8 streams is "+rev);
 
-        // Using java 8 streams with some alterations
+        // Approach-2: Using complete streams API
         String reversedStr = str.chars()  // Convert to IntStream (stream of ASCII values)
                 .mapToObj(c -> (char) c)  // Convert the IntStream to Stream<Character>
                 .collect(Collectors.collectingAndThen(
@@ -34,6 +35,6 @@ public class ReverseStringUsingStreams {
                                     .collect(Collectors.joining());  // Join the characters back into a string
                         }
                 ));
-        System.out.println("reversed string using java 8 streams "+ reversedStr);
+        System.out.println("reversed string using java 8 streams : "+ reversedStr);
     }
 }

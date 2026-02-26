@@ -1,8 +1,16 @@
 package com.abstraction.practice;
 
+/**
+ * Note: In Java, an abstract class can have a constructor, but we cannot instantiate an
+ * abstract class directly.
+ */
 public class AbstractionAchiever extends B {
 
     String str = "hello";
+
+    public AbstractionAchiever() {
+        System.out.println("In AbstractionAchiever class constructor");
+    }
 
     @Override
     void m2() {

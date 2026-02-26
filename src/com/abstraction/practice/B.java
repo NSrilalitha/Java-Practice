@@ -2,6 +2,10 @@ package com.abstraction.practice;
 
 public abstract class B extends A {
 
+    public B() {
+        System.out.println("B class Constructor");
+    }
+
     String str = "hi";
 
     @Override

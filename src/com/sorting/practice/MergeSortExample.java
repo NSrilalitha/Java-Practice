@@ -61,6 +61,22 @@ public class MergeSortExample {
             int[] R = Arrays.copyOfRange(arr, mid + 1, right + 1);
          */
 
+        // To copy the data using System.arraycopy() use below code
+        /*
+            Syntax for System.arraycopy is as follows
+            System.arraycopy(Object src, int srcPos, Object dest, int destPos, int length);
+            here src -> source array
+                 srcPos -> starting position of source array from where array elements needs to be copied
+                 dest -> destination array
+                 destPos -> starting position of destination array
+                 length -> Number of elements to copy
+
+
+            // Copy data using System.arraycopy()
+            System.arraycopy(arr, left, L, 0, n1);
+            System.arraycopy(arr, mid + 1, R, 0, n2);
+         */
+
         // now combine the two arrays and rewrite the arr with sorted order
         int i=0,j=0,k=left;
         while(i<n1 && j<n2) {

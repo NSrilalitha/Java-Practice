@@ -54,6 +54,15 @@ public class FindSameSalariedEmployees {
 
         // sort the employees by their department without using built-in functions, write custom logic
 
+        // Problem-4: Count employees and sort the employees by salary (descending) and then name (alphabetically)
+        Long totalEmployees = employees.stream().count();
+        System.out.println("Total employees :"+totalEmployees);
+        List<Employee> empList = employees.stream()
+                .sorted(Comparator.comparingInt(Employee::getSalary).reversed()
+                        .thenComparing(Comparator.comparing(Employee::getName)))
+                .collect(Collectors.toList());
+
+        empList.forEach(System.out::println);
 
     }
 }
